@@ -1,0 +1,449 @@
+body {
+	background: silver;
+}
+
+
+
+
+/* 
+LOGGED IN VIEW
+MAIN PAGE
+*/
+html, body {
+	margin:0;
+	padding:0;
+}
+
+.stage {
+	position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 20% 60% auto;
+    grid-template-rows: 150px auto;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+}
+
+
+
+
+/* QUEUE STUFF */
+.queue {
+	grid-column: 2 / span 2;
+	grid-row: 1 / span 1;
+
+	background: #272727;
+
+	position: relative;
+}
+
+.queue-role-select {
+	position: relative;
+	width:100%;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: space-around;
+	margin-top:10px;
+}
+
+.role {
+	height:50px;
+	width:50px;
+	border-radius:50%;
+
+}
+
+.select-role:hover {
+	filter:brightness(0.8);
+	cursor: pointer;
+}
+
+.select-role-selected, .select-role-selected:hover {
+	background: yellow;
+	filter:brightness(1);
+}
+
+
+.queue-button {
+	width:35%;
+	height:50px;
+	background: #ac1d1d;
+	margin:auto;
+	position: relative;
+	margin-top:25px;
+	cursor: pointer;
+	text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    color: white;
+}
+
+.queue-button:hover {
+	filter:brightness(1.1);
+}
+
+
+/*
+.serverInfo {
+	grid-column: 3 / span 1;
+	grid-row: 1 / span 1;
+
+	background: tomato;
+}
+*/
+
+
+
+/* LOBBY */
+.lobby {
+	grid-column: 2 / span 2;
+	grid-row: 2 / span 1;
+
+	background: #272727;
+	position: relative;
+}
+
+.blue-team, .red-team {
+	position: absolute;
+	top:0;
+	
+	height:100%;
+	width:300px;
+
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.blue-team {
+	left:0;
+}
+
+.red-team {
+	right:0;
+	align-items:flex-end;
+}
+
+.player {
+	height:20%;
+	box-sizing: border-box;
+	position: relative;
+	width:100%;
+	border-bottom:solid 1px rgb(255,255,255,04);
+}
+
+.player:last-child {
+	border:none;
+}
+
+.lobby .role {
+	position: absolute;
+	top:calc(50% - 25px);
+}
+
+.blue-team .role {
+	left:25px;
+}
+.red-team .role {
+	right:25px;
+}
+
+.player-username {
+	color:white;
+	position: absolute;
+    top: calc(50% - 12px);
+    font-size:24px;
+}
+
+.blue-team .player-username {
+	left:100px;
+}
+
+.red-team .player-username {
+	right:100px;
+}
+
+
+
+/* CHAT */
+.chatArea {
+	position: absolute;
+	top:0;
+	left:350px;
+	height:100%;
+	width: calc(100% - 700px);
+}
+
+.messages {
+	position: relative;
+	height:calc(100% - 55px);
+	margin-bottom: 10px;
+	background: #272727;
+	overflow-y:auto;
+}
+
+.messages * {
+	padding-left:15px;
+	padding-right: 15px;
+	color:white;
+}
+
+.messages .admin {color:red;}
+
+.chatArea input[type='text'] {
+	position: relative;
+	width:90%;
+	height:40px;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+
+	border:solid 1px white;
+	border-right:none;
+}
+
+.chatArea input[type='submit'] {
+	width:10%;
+	height:40px;
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	cursor: pointer;
+
+	border:solid 1px white;
+	border-left:none;
+
+	background: #272727;
+	color:white;
+}
+
+.chatArea input[type='submit']:hover {
+	background:white;
+	color:#272727;
+}
+
+
+
+/* afk check */
+.afkcheck {
+	position: absolute;
+	top:0;
+	left:350px;
+	height:100%;
+	width: calc(100% - 700px);
+
+	background:#272727;
+	color:white;
+	font-size:24px;
+	text-align: center;
+}
+
+
+.timer {
+	position: relative;
+	width:100%;
+	height:10px;
+	float:left;
+	margin-top:5px;
+}
+
+.actual {
+	width:90%;
+	height:100%;
+	background: #fac37c;
+	position: absolute;
+	z-index: 2;
+}
+
+.full {
+	width:100%;
+	height:100%;
+	border:solid 1px white;
+	box-sizing: border-box;
+	position: absolute;
+}
+
+
+
+
+
+
+
+
+.profile {
+	grid-column: 1 / span 1;
+	grid-row: 1 / span 2;
+
+	background: #272727;
+
+	position: relative;
+	color:white;
+}
+
+.user, .invite {
+	position: relative;
+	width:100%;
+	border-bottom:solid 1px white;
+	padding:25px;
+	box-sizing: border-box;
+	font-size: 24px;
+}
+
+
+.user {
+	height:75px;	
+}
+
+
+.invite {	
+	height:400px;
+}
+
+.invite-button, .decline-button {
+	height: 50px;
+    background: #1ca26b;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0 0 5px 1px rgba(3, 2, 2, 0.9);
+    cursor: pointer;
+}
+
+.decline-button {
+	background:#6e0909 ;
+}
+
+.invite-button:hover, .decline-button:hover {
+	filter:brightness(1.2);
+}
+
+.half {
+	width:calc(50% - 5px);
+	float:left;
+}
+
+.half:nth-child(3) {
+	float:right;
+}
+
+
+
+
+.code-info {
+	margin-top:10px;
+	font-size:18px;
+}
+
+.code-info p {
+	color:red;
+}
+
+.code-gen {
+	width:100%;
+	margin-top:10px;
+	border:none;
+	height:26px;
+}
+
+
+
+
+
+/* REIGSTER */
+.registerForm {
+	position: relative;
+	margin:auto;
+	top:200px;
+	width:400px;
+	height:auto;
+
+	background:white;
+	border: solid 2px #729fff;
+    border-radius: 5px;
+}
+
+.registerForm .info {
+	margin-top: 10px;
+    font-size: 20px;
+    left: 10%;
+    position: relative;
+    width:80%;
+}
+
+
+.registerForm input[type='text'], .registerForm input[type='password'], .registerForm input[type='submit']  {
+	position: relative;
+	width:80%;
+	left:10%;
+	margin-top:15px;
+	margin-bottom:15px;
+
+	height:30px;
+}
+
+.registerForm input[type='password'] {
+	
+}
+
+.registerForm input[type='submit'] {
+	
+	width:40%;
+	left:10%;
+
+}
+
+.draw-border {
+  box-shadow: inset 0 0 0 2px #729fff;
+  color: #729fff;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.draw-border:hover {
+  color: #272727;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #272727;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  height:40px;
+  letter-spacing: 0.05rem;
+  width:30%;
+  position: relative;
+  left:10%;
+  margin-bottom:10px;
+}
